@@ -1,3 +1,5 @@
+package com.ChessLibrary;
+
 import java.util.ArrayList;
 
 public class ChessLibrary {

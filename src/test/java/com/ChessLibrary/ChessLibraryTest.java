@@ -1,16 +1,15 @@
 package com.ChessLibrary;
 
-import org.junit.Test;
+import static org.mockito.Mockito.when;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
 import org.junit.Before;
+public class ChessLibraryTest {
 
-public class TermTest {
-
+    
     Term term;
     Term term2;
     Term term3;
+    ChessLibrary cl;
 
     @Before
     public void setUp(){
@@ -21,17 +20,14 @@ public class TermTest {
         "piece on two (or more) of the opponent's pieces (or other direct target," + 
         " such as a mate threat).");
         term3 = new Term("fianchetto", "description");
-    }
-     
-    @Test
-    public void testCompareTo(){
-        assertTrue(term.compareTo(term2) < 0);
-        assertTrue(term2.compareTo(term) > 0);
+        cl = new ChessLibrary();
+        cl.addTerm(term);
     }
 
-    @Test
-    public void testEquals(){
-        assertFalse(term.equals(term2));
-        assertTrue(term.equals(term3)); 
+    
+
+    public void InputTest() {
+        when(cl.checkForDuplicates(term)).thenReturn(true);
     }
+
 }
