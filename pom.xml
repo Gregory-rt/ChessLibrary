@@ -47,25 +47,6 @@
                     </descriptorRefs>
                 </configuration>
             </plugin>
-            <plugin>
-                <artifactId>maven-resources-plugin</artifactId>
-                  <version>3.3.1</version>
-                    <executions> 
-                        <execution>
-                            <phase>site</phase>
-                            <configuration>
-                                <filters>
-                                    <filter>
-                                        <artifact>*:*</artifact>
-                                        <excludes>
-                                            <exclude>META-INF/maven/**</exclude>
-                                        </excludes>
-                                    </filter>
-                                </filters>
-                            </configuration>
-                        </execution>
-                    </executions>
-            </plugin>
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -92,6 +73,13 @@
             <plugin>
                 <artifactId>maven-jar-plugin</artifactId>
                  <version>3.0.2</version>
+                 <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>com.ChessLibrary.App</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
             </plugin>
 
             <plugin>
